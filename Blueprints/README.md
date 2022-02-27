@@ -1,4 +1,4 @@
-# Flask Blueprints
+# Flask Blueprint
 
 This is a code along from YouTube **https://www.youtube.com/watch?v=wC3qkE5vD4M** on how to use Blueprints in Flask.  This helps you
 separate your flask routes into modules where you can import the into your main flask file.
