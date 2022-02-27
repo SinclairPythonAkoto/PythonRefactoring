@@ -1,6 +1,6 @@
 import os
 import typing
-from flask import Flask, render_template
+from flask import Flask
 from hello_world import hello_world
 from home import home
 
