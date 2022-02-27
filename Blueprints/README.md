@@ -5,4 +5,16 @@ separate your flask routes into modules where you can import the into your main 
 
 This helps you to break down your flask into smaller pieces, making it easier to read files and make adjustments where and when needed.
 
+I created the virtual environment for this folder:
+```
+python3 -m venv Blueprints/.venv
+```
+
+Then made sure to install the necessary requirements:
+```
+pip install Flask
+```
+
+I have included type hints with Python's built in ***typing*** module.
+
 This will be a basic version of the YouTube video, just to showcase briefly how it works.
