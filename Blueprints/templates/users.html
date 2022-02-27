@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+
+{% block content %}
+
+<h1>Users</h1>
+<p>This page will show all the usernames that have been created as a list below.</p>
+<p>Ckick <a href="#">here</a> to create a new user.</p>
+
+<form action="/user" method="get"></form>
+
+{% if username %}
+<ul>
+    <li>{{ username }}</li>
+</ul>
+
+{% endif %}
+
+<br>
+<hr>
+<div class="pageButtons">
+    <a class="w3-left" href="{{ url_for('home.homepage') }}">Go Back To Homepage</a>
+    <a class="w3-right" href="{{ url_for('create_user.new_user') }}">Create A New User</a>
+</div>
+
+{% endblock content %}

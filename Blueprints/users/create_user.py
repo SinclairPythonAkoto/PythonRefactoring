@@ -1,6 +1,7 @@
-from crypt import methods
 import typing
-from flask import Blueprint, render_template, url_for, request, redirect
+from flask import Blueprint, render_template, url_for, request, redirect, session
+
+# from users.user import user
 
 
 create_user: Blueprint = Blueprint(
@@ -11,6 +12,7 @@ create_user: Blueprint = Blueprint(
 @create_user.route("/create_user", methods=["GET", "POST"])
 def new_user():
     if request.method == "GET":
-        return "New user created!"
+        return render_template("create_user.html")
     else:
-        pass
+        username: request = request.form.get("username")
+        return redirect(url_for("create_user.new_user", username=username))

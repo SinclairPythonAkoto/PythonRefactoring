@@ -1,4 +1,5 @@
-from flask import Blueprint, render_template, url_for
+import typing
+from flask import Blueprint, render_template, url_for, request, session
 
 
 user: Blueprint = Blueprint(
@@ -6,6 +7,7 @@ user: Blueprint = Blueprint(
 )
 
 
-@user.route("/user")
+@user.route("/user", methods=["GET", "POST"])
 def user_page():
-    return render_template("users.html")
+    username: request = request.form.get("username")
+    return render_template("users.html", username=username)
