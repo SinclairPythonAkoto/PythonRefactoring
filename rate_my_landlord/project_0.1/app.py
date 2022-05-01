@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def landingpage():
-    return "Hello Jasmin!"
+    return render_template("landingPage.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
