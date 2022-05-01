@@ -19,6 +19,8 @@
 	    background-position: center;
 	    background-repeat: no-repeat;
 	    background-size: cover;
+	    filter: blur(3px);
+	    -webkit-filter: blur(3px);
 	}
 	
 	.img1 { background-image: url("/static/London-flats.jpg"); }
@@ -40,7 +42,7 @@
 	    left: 50%;
 	    transform: translate(-50%, -50%);
 	    z-index: 2;
-	    width: 300px;
+	    width: 400px;
 	    padding: 20px;
 	    text-align: center;
 	}
@@ -54,6 +56,6 @@
     <div class="bg-image img5"></div>
     <div class="bg-image img6"></div>
 
-    <div class="bg-text">TEXT</div>
+    <div class="bg-text" onclick="location.href='#';">Rate This Property</div>
 </body>
 </html>
