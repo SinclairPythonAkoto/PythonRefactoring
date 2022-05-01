@@ -2,11 +2,58 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Page Title</title>
-    <meta name="description" content="My Page Description">
-    <link rel="stylesheet" href="styles.css"/>
+    <title>Rate This Property!</title>
+    <meta name="description" content="Web app that enables users to rate the condition and attributes of a property.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body, html {
+            height: 100%;
+	    margin: 0;
+	    font-family: Arial, Helvetica, sans-serif;
+	}
+        * {
+	    box-sizing: border-box;
+	}
+	.bg-image {
+            height: 50%;
+	    background-position: center;
+	    background-repeat: no-repeat;
+	    background-size: cover;
+	}
+	
+	.img1 { background-image: url("/static/London-flats.jpg"); }
+	.img2 { background-image: url("/static/Studio_apartment.jpg"); }
+	.img3 { background-image: url("/static/Moss_Side_terraced.jpg"); }
+	.img4 { background-image: url("/static/semi_detached.jpg"); }
+	.img5 { background-image: url("/static/detached.jpg"); }
+	.img6 { background-image: url("/static/mansion.jpg"); }
+
+	.bg-text {
+            background-color: rgb(0,0,0);
+	    background-color: rgba(0,0,0, 0.4);
+	    color: white;
+	    font-weight: bold;
+	    font-size: 80px;
+	    border: 10px solid #f1f1f1;
+	    position: fixed;
+	    top: 50%;
+	    left: 50%;
+	    transform: translate(-50%, -50%);
+	    z-index: 2;
+	    width: 300px;
+	    padding: 20px;
+	    text-align: center;
+	}
+    </style>
 </head>
 <body>
-    <script src="script.js"></script>
+    <div class="bg-image img1"></div>
+    <div class="bg-image img2"></div>
+    <div class="bg-image img3"></div>
+    <div class="bg-image img4"></div>
+    <div class="bg-image img5"></div>
+    <div class="bg-image img6"></div>
+
+    <div class="bg-text">TEXT</div>
 </body>
 </html>
