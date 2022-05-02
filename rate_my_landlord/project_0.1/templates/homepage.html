@@ -47,9 +47,13 @@
 	    color: black;
 	}
 	.flip-box-back {
-            background-color: dodgerblue;
+            background-color: red;
 	    color: white;
 	    transform: rotateY(180deg);
+	}
+	.blur-pic {
+            filter: blur(2px);
+	    -webkit-filter: blur(2px);
 	}
     </style>
 </head>
@@ -62,10 +66,10 @@
 	<div class="w3-bar-block">
 	    <a href="#home" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a>
 	    <a href="#description" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Description</a>
-	    <a href="#factors" onclick="w3_close()" class="w3-bar-item w3-hover-white">Services</a>
-	    <a href="#instructions" onclick="w3_close()" class="w3-bar-item w3-hover-white">Designers</a>
-	    <a href="#writeReview" onclick="w3_close()" class="w3-bar-item w3-hover-white">Packages</a>
-	    <a href="#viewReviews" onclick="w3_close()" class="w3-bar-item w3-hover-white">Contact</a>
+	    <a href="#factors" onclick="w3_close()" class="w3-bar-item w3-hover-white">Factors</a>
+	    <a href="#instructions" onclick="w3_close()" class="w3-bar-item w3-hover-white">Instructions</a>
+	    <a href="#writeReview" onclick="w3_close()" class="w3-bar-item w3-hover-white">Write Review</a>
+	    <a href="#viewReviews" onclick="w3_close()" class="w3-bar-item w3-hover-white">View Reviews</a>
 	</div>
     </nav>
 
@@ -96,22 +100,182 @@
 	<div class="w3-container" style="margin-top:80px" id="factors">
 	    <h1 class="w3-xxlarge"><b>Factors</b></h1>
 	    <hr style="width:50px;border:5px solid red" class="w3-round"/>
+	    <p>
+	        Here are some factors to consider when creating a review - some factors can also be positive!
+	    </p>
 	</div>
-	<!-- Adding flip on images -->
+	<!-- Adding flip on images  - Grid 1-->
 	<div class="w3-col m4 w3-margin-bottom">
 	    <div class="flip-box">
 	        <div class="flip-box-inner">
 		    <div class="flip-box-front">
-	                <img src="static/London-flats.jpg" style="width:100%"/>
+	                <img class="blur-pic" src="static/houseParty.jpg" style="width:100%"/>
 		    </div>
 		    <div class="flip-box-back">
-		        <h2>Add Text</h2>
-			<p>Some text here</p>
+		        <h2>Parties & Large Gatherings</h2>
+			<p>Parties and gatherings causing a disturbance.</p>
+		    </div>
+		</div>
+	    </div>
+	</div>
+	<div class="w3-col m4 w3-margin-bottom">
+	    <div class="flip-box">
+	        <div class="flip-box-inner">
+		    <div class="flip-box-front">
+	                <img class="blur-pic" src="static/swearing.jpg" style="width:100%; height:200px;"/>
+		    </div>
+		    <div class="flip-box-back">
+		        <h2>Rudness</h2>
+			<p>Rudeness or harrasment from people within the property.</p>
+		    </div>
+		</div>
+	    </div>
+	</div>
+	<div class="w3-col m4 w3-margin-bottom">
+	    <div class="flip-box">
+	        <div class="flip-box-inner">
+		    <div class="flip-box-front">
+	                <img class="blur-pic" src="static/fighting.jpg" style="width:100%; height:200px;"/>
+		    </div>
+		    <div class="flip-box-back">
+		        <h2>Fighting</h2>
+			<p>Fighting or aggressive behaviour.</p>
 		    </div>
 		</div>
 	    </div>
 	</div>
 
+	<br/>
+
+	<!-- Grid 2 -->
+	<div class="w3-col m4 w3-margin-bottom">
+	    <div class="flip-box">
+	        <div class="flip-box-inner">
+		    <div class="flip-box-front">
+	                <img class="blur-pic" src="static/arguing.jpg" style="width:100%; height:200px;"/>
+		    </div>
+		    <div class="flip-box-back">
+		        <h2>Domestic Disturbances</h2>
+			<p>Neighbours arguing or being disruptive.</p>
+		    </div>
+		</div>
+	    </div>
+	</div>
+	<div class="w3-col m4 w3-margin-bottom">
+	    <div class="flip-box">
+	        <div class="flip-box-inner">
+		    <div class="flip-box-front">
+	                <img class="blur-pic" src="static/rubbish_house.jpg" style="width:100%; height:200px;"/>
+		    </div>
+		    <div class="flip-box-back">
+		        <h2>Dirty / Unkempt</h2>
+			<p>Piles of rubbish & litter left laying around the property.</p>
+		    </div>
+		</div>
+	    </div>
+	</div>
+	<div class="w3-col m4 w3-margin-bottom">
+	    <div class="flip-box">
+	        <div class="flip-box-inner">
+		    <div class="flip-box-front">
+	                <img class="blur-pic" src="static/drug_misuse.jpg" style="width:100%; height:200px;"/>
+		    </div>
+		    <div class="flip-box-back">
+		        <h2>Drug Misuse</h2>
+			<p>Drugs are used in or around the property.</p>
+		    </div>
+		</div>
+	    </div>
+	</div>
+
+	<br>
+	<!-- Grid 3 -->
+	<div class="w3-col m4 w3-margin-bottom">
+	    <div class="flip-box">
+	        <div class="flip-box-inner">
+		    <div class="flip-box-front">
+	                <img class="blur-pic" src="static/broken_sofa.jpg" style="width:100%; height:200px;"/>
+		    </div>
+		    <div class="flip-box-back">
+		        <h2>Broken Furniture</h2>
+			<p>Furniture broken before or during moving into property.</p>
+		    </div>
+		</div>
+	    </div>
+	</div>
+	<div class="w3-col m4 w3-margin-bottom">
+	    <div class="flip-box">
+	        <div class="flip-box-inner">
+		    <div class="flip-box-front">
+	                <img class="blur-pic" src="static/mould.jpg" style="width:100%; height:200px;"/>
+		    </div>
+		    <div class="flip-box-back">
+		        <h2>Mould</h2>
+			<p>Damp and/or mould within the property.</p>
+		    </div>
+		</div>
+	    </div>
+	</div>
+	<div class="w3-col m4 w3-margin-bottom">
+	    <div class="flip-box">
+	        <div class="flip-box-inner">
+		    <div class="flip-box-front">
+	                <img class="blur-pic" src="static/broken_appliances.jpg" style="width:100%; height:200px;"/>
+		    </div>
+		    <div class="flip-box-back">
+		        <h2>Broken Appliances</h2>
+			<p>Broken appliances within the property making it difficult to live in - broken fridge, boiler, cooker etc</p>
+		    </div>
+		</div>
+	    </div>
+	</div>
+
+	<br/>
+
+	<!-- Grid 4 -->
+	<div class="w3-col m4 w3-margin-bottom">
+	    <div class="flip-box">
+	        <div class="flip-box-inner">
+		    <div class="flip-box-front">
+	                <img class="blur-pic" src="static/infestation.jpg" style="width:100%; height:200px;"/>
+		    </div>
+		    <div class="flip-box-back">
+		        <h2>Infestation</h2>
+			<p>Rats, rodents, bugs and/or bugs cohibiting in the property.</p>
+		    </div>
+		</div>
+	    </div>
+	</div>
+	<div class="w3-col m4 w3-margin-bottom">
+	    <div class="flip-box">
+	        <div class="flip-box-inner">
+		    <div class="flip-box-front">
+	                <img class="blur-pic" src="static/messy_roommate.jpg" style="width:100%; height:200px;"/>
+		    </div>
+		    <div class="flip-box-back">
+			    <h2>Messy Housemates / Flatmates</h2>
+			<p>Unkepmt house mates making it difficult to live iwht them..</p>
+		    </div>
+		</div>
+	    </div>
+	</div>
+	<div class="w3-col m4 w3-margin-bottom">
+	    <div class="flip-box">
+	        <div class="flip-box-inner">
+		    <div class="flip-box-front">
+	                <img class="blur-pic" src="static/angry-landlord.jpg" style="width:100%; height:200px;"/>
+		    </div>
+		    <div class="flip-box-back">
+			    <h2>Difficult Landlords</h2>
+			<p>Landlords being diificult, causing harrasment, increasing rent without formal notice.</p>
+		    </div>
+		</div>
+	    </div>
+	</div>
+
+	<br>
+
+	<br>
     </div>
 </body>
 </html>
