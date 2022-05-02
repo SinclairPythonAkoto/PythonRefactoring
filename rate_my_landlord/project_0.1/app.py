@@ -11,5 +11,9 @@ def landingpage():
 def homepage():
     return render_template("homepage.html")
 
+@app.route("/writeReview")
+def writeReview():
+    return "Review Page"
+
 if __name__ == "__main__":
     app.run(debug=True)
