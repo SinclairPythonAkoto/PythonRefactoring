@@ -1,7 +1,9 @@
 import os
 
 from flask import Flask
-from flask import render_template, request
+from flask import render_template
+from flask import request
+from flask import redirect
 
 from flask_sqlalchemy import SQLAlchemy
 
@@ -10,6 +12,7 @@ database_file = "sqlite:///{}".format(os.path.join(project_dir, "bookdatabase.db
 
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = database_file
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 db = SQLAlchemy(app)
 
@@ -28,6 +31,15 @@ def home():
         db.session.commit()
         books = Book.query.all()
     return render_template("home.html", books=books)
+
+@app.route("/update", methods=["POST"])
+def update():
+    newtitle = request.form.get("newtitle")
+    oldtitle = request.form.get("oldtitle")
+    book = Book.query.filter_by(title=oldtitle).first()
+    book.title = newtitle
+    db.session.commit()
+    return redirect("/")
 
 if __name__ == "__main__":
     app.run(debug=True)
