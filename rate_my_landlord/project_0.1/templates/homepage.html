@@ -17,6 +17,40 @@
 	    opacity: 0.8;
 	    cursor: pointer;
 	}
+	.flip-box {
+            background-color: transparent;
+	    width: 300px;
+	    height: 200px;
+	    border: 1px solid #f1f1f1;
+	    perspective: 1000px;
+	}
+	.flip-box-inner {
+            position: relative;
+	    width: 100%;
+	    height: 100%;
+	    text-align: center;
+	    transition: transform 0.8s;
+	    transform-style: preserve-3d;
+	}
+	.flip-box:hover .flip-box-inner {
+            transform: rotateY(180deg);
+	}
+	.flip-box-front, .flip-box-back {
+            position: absolute;
+	    width: 100%;
+	    height: 100%;
+	    -webkit-backface-visibility: hidden;
+	    backface-visibility: hidden;
+	}
+	.flip-box-front {
+            background-color: #bbb;
+	    color: black;
+	}
+	.flip-box-back {
+            background-color: dodgerblue;
+	    color: white;
+	    transform: rotateY(180deg);
+	}
     </style>
 </head>
 <body>
@@ -63,6 +97,21 @@
 	    <h1 class="w3-xxlarge"><b>Factors</b></h1>
 	    <hr style="width:50px;border:5px solid red" class="w3-round"/>
 	</div>
+	<!-- Adding flip on images -->
+	<div class="w3-col m4 w3-margin-bottom">
+	    <div class="flip-box">
+	        <div class="flip-box-inner">
+		    <div class="flip-box-front">
+	                <img src="static/London-flats.jpg" style="width:100%"/>
+		    </div>
+		    <div class="flip-box-back">
+		        <h2>Add Text</h2>
+			<p>Some text here</p>
+		    </div>
+		</div>
+	    </div>
+	</div>
+
     </div>
 </body>
 </html>
