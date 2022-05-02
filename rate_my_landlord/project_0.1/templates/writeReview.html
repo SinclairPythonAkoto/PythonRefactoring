@@ -22,8 +22,6 @@
 	    background-repeat: no-repeat;
 	    background-size: cover;
 	    position: relative;
-	    // filter: blur(3px);
-	    // -webkit-filter: blur(3px);
 	}
 	.container {
 	    position: absolute;
@@ -40,7 +38,7 @@
 	    border: none;
 	    background: #f1f1f1;
 	}
-	input[type=text]:focus, textarea:focus input[type=file] {
+	input[type=text]:focus, textarea:focus input[type=file]:focus {
 	    background-color: #ddd;
 	    outline: none;
 	}
@@ -67,7 +65,7 @@
 	    opacity: 0.9;
 	}
 	.btn:hover {
-	    opacity: 1;
+	    opacity: 3;
 	}
 	.wrapper-class input[type="radio"] {
             width: 15px;
@@ -76,27 +74,35 @@
             display: inline;
 	    margin-right: 5px;
 	}
+	.blur-img {
+            filter: blur(3px);
+	    -webkit-filter: blur(3px);
+	}
+	.disableBlur {
+            filter: blur(0px);
+	    -webkit-filter: blur(0px);
+	}
     </style>
 </head>
 <body>
     <h2>Write A Review</h2>
     <div class="bg-img">
         <form action="/" class="container">
-	    <h1>Property Information</h1>
+	    <h1 class="disableBlur">Property Information</h1>
 	    <label for="propertyNumber">Door / Property Number</label>
-	    <input type="text" placeholder="Enter Door/Property Number" name="propertyNumber" required/>
+	    <input type="text" placeholder="Enter Door/Property Number" name="propertyNumber" style="width:89%" required/>
 	    <label for="streetName">Street</label>
-	    <input type="text" placeholder="Enter Street Name" name="streetName" required/>
+	    <input type="text" placeholder="Enter Street Name" name="streetName" style="width:89%" required/>
 	    <label for="town">Town</label>
-	    <input type="text" placeholder="Enter Name of Town" name="town"/>
+	    <input type="text" placeholder="Enter Name of Town" style="width:89%" name="town"/>
 	    <label for="city">City</label>
-	    <input type="text" placeholder="Enter City" name="city" required/>
+	    <input type="text" placeholder="Enter City" name="city" style="width:89%" required/>
 	    <label for="postcode">Postcode</label>
-	    <input type="text" placeholder="Enter Postcode" name="postcode" required/>
+	    <input type="text" placeholder="Enter Postcode" name="postcode" style="width:89%" required/>
 	    <hr>
 	    <h1>Your Review</h1>
 	    <label for="writeReview">Review</label>
-	    <textarea placeholder="Write Your Review Here..." rows="7" cols="60" name="reviewText" required></textarea>
+	    <textarea placeholder="Write Your Review Here..." rows="7" cols="60" name="reviewText" style="width:89%" required></textarea>
 	    <label for="reviewer">Reviewer</label>
 	    <div class="wrapper-class">
 	        <input type="radio" id="tenant" value="tenant" name="selection"/>
