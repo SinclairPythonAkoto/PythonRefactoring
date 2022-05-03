@@ -6,6 +6,7 @@
     <meta name="description" content="Web app that enables users to rate the condition and attributes of a property.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         body, html {
 	    height: 100%;
@@ -82,10 +83,16 @@
             filter: blur(0px);
 	    -webkit-filter: blur(0px);
 	}
+	.checked {
+            color: red;
+	}
+	
     </style>
+    <script src="https://kit.fontawesome.com/fbfdd5a072.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <h2>Write A Review</h2>
+    <h1>Write A Review</h1>
+    <!-- Create a review form -->
     <div class="bg-img">
         <form action="/" class="container">
 	    <h1 class="disableBlur">Property Information</h1>
@@ -101,6 +108,8 @@
 	    <input type="text" placeholder="Enter Postcode" name="postcode" style="width:89%" required/>
 	    <hr>
 	    <h1>Your Review</h1>
+	    <label for="rating">Property Rating</label>
+	    <p>1 <input type="range" id="rating" name="rating" min="1" max="5" style="accent-color:red"/> 5</p>
 	    <label for="writeReview">Review</label>
 	    <textarea placeholder="Write Your Review Here..." rows="7" cols="60" name="reviewText" style="width:89%" required></textarea>
 	    <label for="reviewer">Reviewer</label>
