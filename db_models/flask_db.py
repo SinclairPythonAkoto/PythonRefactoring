@@ -29,7 +29,7 @@ class Building(db.Model):
         self.post_code
 
 class PropertyReview(db.Model):
-    id = db.Column(db.Integer, primary_key)
+    id = db.Column(db.Integer, primary_key=True)
     property_rating = db.Column(db.Integer(1), nullable=False)
     review = db.Colum(db.Text, nullable=False)
     review_by = db.Column(db.String(10), nullable=False)
