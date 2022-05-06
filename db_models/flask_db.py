@@ -30,7 +30,7 @@ class Building(db.Model):
 
 class PropertyReview(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    property_rating = db.Column(db.Integer(1), nullable=False)
+    property_rating = db.Column(db.Integer, nullable=False)
     review = db.Colum(db.Text, nullable=False)
     review_by = db.Column(db.String(10), nullable=False)
     image_file = db.Column(db.String(20), nullable=False, default='BondRobotics_logo.jpg')
