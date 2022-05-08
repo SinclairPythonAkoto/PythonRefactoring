@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Write Review</title>
+    <meta name="description" content="Quick example of how to create a database with Flask">
+</head>
+<body>
+    <h1>Write A Review</h1>
+    <form>
+        <h1>Property Information</h1>
+	<label for="propertyNumber">Door / Door Number</label>
+	<input type="text" placeholder="Enter Door/Property Number" name="propertyNumber" style="width:89%" required/>
+	<label for="streetName">Street</label>
+	<input type="text" placeholder="Enter Street Name" name="streetName" style="width:89%" required/>
+	<label for="town">Town</label>
+	<input type="text" placeholder="Enter Town" name="town" style="width:89%"/>
+	<label for="city">City</label>
+	<input type="text" placeholder="Enter City" name="city" style="width:89%" required/>
+	<label for="postcode">Postcode</label>
+	<input type="text" placeholder="Enter Postcode" name="postcode" style="width:89%" required/>
+	<hr/>
+	<h1>Your Review</h1>
+	<label for="rating">Property Rating</label>
+	<p>1 <input type="range" id="rating" min="1" max="5" style="accent-color:red"/> 5</p>
+	<label for=writeReview">Review</label>
+	<textarea placeholder="Write Your Review Here..." rows="7" cols="60" name="reviewText" style="width:89%" required></textarea>
+	<label for="reviewer">Reviewer</label>
+	<div>
+	    <label for="tenant">Tenant</label>
+	    <input type="radio" id="tenant" value="tenant" name="selection"/>
+	    <label for="neighbour">Neighbour</label>
+	    <input type="radio" id="neighbour" value="neighbour" name="selection"/>
+	    <label for="visitor">Visitor</label>
+	    <input type="radio" id="visitor" value="visitor" name="selection"/>
+	</div>
+	<label for="imgUpload">Upload Image</label>
+	<input type="file" id="imgUpload" name="imgUpload" multiple/>
+	<button type="submit">Send Review</button>
+    </form>
+</body>
+</html>
