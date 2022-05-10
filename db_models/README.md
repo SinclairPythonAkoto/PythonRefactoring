@@ -22,10 +22,12 @@ Now we want to initialise the database.  Below where we configure our Flask app 
 ```
 app = Flask(__name__)
 
+app.config['SECRET_KEY'] = 'somepassword'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
 ```
 We have used SQLite because it is quick and easy to set up; however we can replace `sqlite:///test.db` with a MySQL database path.
 `test.db` is the name of the database; this will be stored in the same directory as your Flask file.
+`somepassword` is going to be the password for your session.  At a later date we will update this to become a private variable.
 
 Now we can set up the database instance.
 ```
@@ -83,7 +85,7 @@ property1 = Building(door_number='83C', street_name='Manorside Close', city='Lon
 db.session.add(property1)
 db.session.commit()
 
-prop1 = Building.query.get(1)
+prop1 = Building.query.get(property1.id) # this will dynamically get the id of the property review created
 review1 = PropertyReview(property_rating=4, review='The house is well kept and the neighbours are really friendly', rating_by='visitor', property_id=prop1.id)
 
 db.session.add(review1)
