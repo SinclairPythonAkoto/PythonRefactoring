@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Write A Review</h1>
-    <form>
+    <form action="{{ url_for('write_review') }}" method="post">
         <h1>Property Information</h1>
 	<label for="propertyNumber">Door / Door Number</label>
 	<input type="text" placeholder="Enter Door/Property Number" name="propertyNumber" style="width:89%" required/>
@@ -21,9 +21,20 @@
 	<input type="text" placeholder="Enter Postcode" name="postcode" style="width:89%" required/>
 	<hr/>
 	<h1>Your Review</h1>
-	<label for="rating">Property Rating</label>
-	<p>1 <input type="range" id="rating" min="1" max="5" style="accent-color:red"/> 5</p>
-	<label for=writeReview">Review</label>
+	<label for="propertyReview">Property Review</label>
+	<div>
+	    <label for="rating1">1</label>
+	    <input type="radio" id="rating1" value="1" name="propertyrating"/>
+	    <label for="rating2">2</label>
+	    <input type="radio" id="rating2" value="2" name="propertyrating"/>
+            <label for="rating3">3</label>
+	    <input type="radio" id="rating3" value="3" name="propertyrating"/>
+            <label for="rating4">4</label>
+	    <input type="radio" id="rating4" value="4" name="propertyrating"/>
+            <label for="rating5">5</label>
+	    <input type="radio" id="rating5" value="5" name="propertyrating"/>
+	</div>
+	<label for="writeReview">Review</label>
 	<textarea placeholder="Write Your Review Here..." rows="7" cols="60" name="reviewText" style="width:89%" required></textarea>
 	<label for="reviewer">Reviewer</label>
 	<div>
@@ -38,5 +49,6 @@
 	<input type="file" id="imgUpload" name="imgUpload" multiple/>
 	<button type="submit">Send Review</button>
     </form>
+    {{ get_user_property }} {{ user_review }}
 </body>
 </html>
