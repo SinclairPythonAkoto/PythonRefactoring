@@ -33,7 +33,7 @@ x1_change = 0
 y1_change = 0
 
 clock = pygame.time.Clock()
-snake =_speed = 30
+snake_speed = 30
 
 font_style = pygame.font.SysFont(None, 50)
 
@@ -84,3 +84,6 @@ x1 = dis_width / 2
 y1 = dis_height / 2
 ```
 Also notice how we have created the variable `snake_block`. This enables us to chnage the size of the snake blocks as we please, and also control the movement of the snake when the direction keys are pressed.
+
+***You can also adjust the speed of the snake with*** `snake_speed`.
+***For my code I have slowed down the speed for the snake.***
