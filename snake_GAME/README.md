@@ -1,6 +1,6 @@
 ## Snake Game With PyGame ##
 
-Source: [https://www.edureka.co/blog/snake-game-with-pygame/#createthesnake](www.edureka.co)
+Source: [www.edureka.co](https://www.edureka.co/blog/snake-game-with-pygame/#createthesnake)
 
 A quick tutorial on how to build a Snake game using the **PyGame** library.
 
