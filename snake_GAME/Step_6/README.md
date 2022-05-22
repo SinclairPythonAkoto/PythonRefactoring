@@ -1,6 +1,7 @@
 ## Increasing The Length of The Snake ##
 In this session we will increase the length of the snake everytime it eats a food.  To do this we put the snake in a list and append the list everytime it eats a food.  We will also stop the game if the snake collides with it's own body.
 
+**Code to increase the length of the snake:**
 ```
 import pygame
 import time
@@ -19,7 +20,7 @@ dis_width = 600
 dis_height = 400
  
 dis = pygame.display.set_mode((dis_width, dis_height))
-pygame.display.set_caption('Snake Game by Edureka')
+pygame.display.set_caption('Snake game by Akoto Tech')
  
 clock = pygame.time.Clock()
  
