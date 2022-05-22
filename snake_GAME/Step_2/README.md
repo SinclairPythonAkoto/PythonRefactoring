@@ -10,6 +10,7 @@ import pygame
 pygame.init()
 
 dis = pygame.display.set_mode((400,300))
+pygame.display.set_caption('Snake game by Akoto Tech')
 
 blue = (0,0,255)
 red = (255,0,0)
