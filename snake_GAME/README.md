@@ -1,68 +1,58 @@
-## Creating A Screen ##
+## Snake Game With PyGame ##
 
-We will create a screen in order for the user to be able to play the game.
+Source: [www.edureka.co](https://www.edureka.co/blog/snake-game-with-pygame/#createthesnake)
 
-**Code to create a screen:**
+A quick tutorial on how to build a Snake game using the **PyGame** library.
+
+This will be broken down into *7x steps*, where in each step I will walk through how to create aspects of the game - from building the screen, moving the Snalke to displaying the score.
+- **Step 1:** Create the screen
+- **Step 2:** Create the Snake
+- **Step 3:** Moving the Snake
+- **Step 4:** Game over when the Snake hits the boundaries
+- **Step 5:** Adding the food
+- **Step 6:** Increasing the length of the Snake
+- **Step 7:** Displaying the score
+#### Installing PyGame ####
+To be able to use the PyGame library we have to install it on your machine.
 ```
-import pygame
-
-pygame.init()
-
-dis = pygame.display.set_mode((400,300))
-pygame.display.update()
-
-pygame.quit()
+pip install pygame
+```
+#### PyGame Functions ####
+These will be the PyGame functions that we will be using along with the descriptions of what they do.
+```
+init()
+```
+This will initialise all of the imported PyGame modules.  It returns a tuple telling the developer success/failure of initialisations.
+```
+display.set_mode()
+```
+Takes a tuple or a list as it's parameter to create a surface (a tuple is preferred).
+```
+update()
+```
+Updates the screen being used.
+```
 quit()
 ```
-
-In order to keep the window screen open, we have to create a while loop otherwise the screen will close immediately after it opens.
-***We place the while loop just above*** `pygame.quit()`.
-
-As you can see, in the terminal, the x & y coordinates along with the mouse buttons are printed everytime the mouse is moved.
-You will also notice that you cannot close the screen when you press the **X** at the top of the right corner of the screen.  So if you are at this stage and would liek to close, you would have to press `ctrl` + `C` in the terminal.
-
-**Code to display screen, prevent it from closing and display a screen title:**
+Used to uninitialise everything.
 ```
-import pygame
-
-pygame.init()
-
-dis = pygame.display.set_mode((400,300))
-pygame.display.update()
-pygame.display.set_caption('Snake game by Akoto Tech')
-
-game_over = False
-
-while not game_over:
-    for event in pygame.event.get():
-        print(event)
-
-pygame.quit()
-quit()
+set_caption()
 ```
-**To quit the game in the termianl press:** `cntrl` + `C`
-
-For the screen to close when we click on the `X` at the top right hand side of the screen, we will need to specify that the screen should exit when the button is pressed.  To do this we have to specify the PyGame event to `QUIT`.
-
-**Code to display screen, display the game title and allow the screen to close once exit button is pressed:**
+Will set the saption text at the top of the display screen.
 ```
-import pygame
-
-pygame.init()
-
-dis = pygame.display.set_mode((400,300))
-pygame.display.update()
-pygame.display.set_caption('Snake game by Akoto Tech')
-
-game_over = False
-
-While not game_over:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            game_over = True
-
-pygame.quit()
-quit()
+event.get()
 ```
-
-Once we have done this, we have built a screen with a title of the game, and will allow the user to exit the screen once the `X` button has been pressed.
+Returns a list of all events.
+```
+Surface.fill()
+```
+Will fill the surface with a solid colour.
+```
+time.Clock()
+```
+Helps track the time.
+```
+font.SysFont()
+```
+Will create a PyGame font from the System font resources.
+***Once you have installed PyGame and read through the functions, you are ready to code!***
