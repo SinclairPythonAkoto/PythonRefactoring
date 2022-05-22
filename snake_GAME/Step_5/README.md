@@ -96,3 +96,5 @@ def gamLoop:
 
 gameLoop()
 ```
+
+When you test this code you will find that the snake's food will stay at the same place even after your snake has eaten it *(travelled across the square)*.  In the next session we will look at how we can extend the the snake and move it to a different part of the screen.
