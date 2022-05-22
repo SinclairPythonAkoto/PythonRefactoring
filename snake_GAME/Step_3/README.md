@@ -8,7 +8,7 @@ The variables `x1_change` and `y1_change` have been created in order to hold the
 
 **Code to move the snake and chnage the background colour:**
 ```
-impot pygame 
+import pygame 
 
 pygame.init()
 
@@ -64,7 +64,7 @@ What we are doing here is everytime the user moves the snake, we update the x & 
 Let's take a closer look at:
 ```
 x1 += x1_change
-y1 += y1_chnage
+y1 += y1_change
 ```
 Because we have set the original `x1` and `y1` coordinates to `300`, to update them everytime the snake moves the `x1_change` & `y1_change` values are either added or subtracted to the `x1` & `y1` values.
 So `x1 += x1_change` is basically saying **add or subtract** whatever the value `x1_change` is to/from the `x1` value.  The same principle at the line below for `y1`.
