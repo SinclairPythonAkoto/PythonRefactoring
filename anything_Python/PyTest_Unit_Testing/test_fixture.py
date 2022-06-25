@@ -23,7 +23,7 @@ def test_method2(numbers):
     assert numbers[1] == y
 
 def test_method3(numbers):
-    x = 25
+    z = 25
     assert numbers[2] == z
 
 
