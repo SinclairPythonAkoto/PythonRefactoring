@@ -16,3 +16,12 @@ We will cover the following:
 - Using *assert* to validate your logic
 - Using *fixtures* to set up your tests
 - How to *mock* external dependencies
+
+#### Quick Notes ####
+We can get pytest to reveal our print statements within our tests; by simply using `-s` after
+specifying which test function you want to print from (unless you want it applied to all functions).
+
+In the terminal:
+```
+pytest test_my_file.py::test_my_function -s
+```
