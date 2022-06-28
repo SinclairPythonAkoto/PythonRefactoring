@@ -9,14 +9,14 @@ url = (
 
 querystring = {
     "query": "pasta",
-    # "cuisine": "italian",
-    # "excludeCuisine": "greek",
-    # "diet": "vegetarian",
-    # "intolerances": "gluten",
-    # "equipment": "pan",
-    # "includeIngredients": "tomato,cheese",
-    # "excludeIngredients": "eggs",
-    # "type": "main course",
+    "cuisine": "italian",
+    "excludeCuisine": "greek",
+    "diet": "vegetarian",
+    "intolerances": "gluten",
+    "equipment": "pan",
+    "includeIngredients": "tomato,cheese",
+    "excludeIngredients": "eggs",
+    "type": "main course",
     "instructionsRequired": "true",
     "fillIngredients": "false",
     "addRecipeInformation": "false",
@@ -138,7 +138,10 @@ import requests
 
 url = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random"
 
-querystring = {"tags": "", "number": "1"}
+querystring = {
+    "tags": "breakfast",
+    "number": "1",
+}  # dessert, main course, starter, breakfast, brunch, (options)
 
 headers = {
     "X-RapidAPI-Key": "670505dc3fmsh9cd923658f74705p10c323jsnc8539188f679",
@@ -147,7 +150,19 @@ headers = {
 
 response = requests.request("GET", url, headers=headers, params=querystring)
 
-# print(response.text)
+data = response.json()
+data = data["recipes"][0]
+
+title = data["title"]
+img = data["image"]
+servings = data["servings"]
+prepare_time = data["preparationMinutes"]
+cook_time = data["cookingMinutes"]
+ready_in = data["readyInMinutes"]
+instructions = data["instructions"]
+
+
+# print(title, img, servings, prepare_time, cook_time, ready_in, instructions)
 
 # generate meal plan
 import requests

@@ -18,7 +18,6 @@
         <button type="submit">Find Meal</button><br><br>
         {% if data %}
 
-        {{ data }} <br><br>
         {{ title }} <br><br>
 
         <img src="{{ img }}" alt="{{ title }}"> <br>
@@ -35,6 +34,48 @@
         {% endfor %}
         {% endif %}
 
+        {% endif %}
+
+        {% if void %}
+        {{ void }}
+        {% endif %}
+    </form>
+</div>
+<div class="container">
+    <form action="{{ url_for('home.random_recipe') }}" method="post">
+        <h3>Get Random Recipe!</h3><br>
+        <p>
+            Click the button below to get your random recipe!
+        </p><br>
+        <select name="meal_options" id="mealOptions">
+            <option value="breakfast">Breakfast</option>
+            <option value="brunch">Brunch</option>
+            <option value="starter">Starter</option>
+            <option value="main_course">Main Course</option>
+            <option value="dessert">Dessert</option>
+            <option value="vege">Vegeterian</option>
+            <option value="vegan">Vegan</option>
+        </select> <br>
+        <button type="submit">Get Random Meal</button> <br><br>
+        {% if data1 %}
+
+        {{ title }} <br><br>
+
+        <img src="{{ img }}" alt="{{ title }}"> <br>
+
+        <p>
+            servings: {{ servings }} people <br>
+            preparation time: {{ prepare_time }} mins <br>
+            cooking time: {{ cook_time }} mins <br>
+            ready in: {{ ready_in }} mins
+            how to make: <br>
+            {{ instructions }}
+        </p>
+
+        {% endif %}
+
+        {% if void %}
+        {{ void }}
         {% endif %}
     </form>
 </div>
