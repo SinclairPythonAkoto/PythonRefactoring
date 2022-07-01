@@ -1,6 +1,5 @@
 """Testing the functionality of the Easy Chef app"""
 
-from wsgiref import headers
 import pytest
 import requests
 import main
@@ -8,7 +7,6 @@ from flask import Flask, Blueprint
 from homepage import home
 import json
 
-# validate response
 
 # validate route (webpage)
 def test_base_route():
@@ -57,6 +55,7 @@ def test_post_route_success():
     print("test 1")
 
 
+# validate headers
 def test_mock_headers():
     app = Flask(__name__, template_folder="../templates")
     app.register_blueprint(home)
@@ -86,6 +85,7 @@ def test_mock_headers():
     print("test 3")
 
 
+# validate query string
 def test_request_querystring():
     app = Flask(__name__, template_folder="../templates")
     app.register_blueprint(home)
@@ -119,6 +119,7 @@ def test_request_querystring():
     assert mock_request_querystring["ingredients"] == "apples,flour,sugar"
 
 
+# validate unauthorised call
 def test_unauthorized_api_call():
     """Check if correct unauthorised request message is given back if
     no data in mock_request_headers.
@@ -147,6 +148,7 @@ def test_unauthorized_api_call():
     assert response.status_code == 401
 
 
+# validate unavailable page
 def test_bad_request_api_call():
     """Check if correct bad request is 404 - page not avaiable"""
     app = Flask(__name__, template_folder="../templates")
@@ -169,7 +171,6 @@ def test_bad_request_api_call():
         "ranking": "1",
     }
 
-    # response = requests.request("GET", url, headers=mock_request_headers, params=None)
     response = client.post(
         url, data=json.dumps(mock_request_querystring), headers=mock_request_headers
     )
