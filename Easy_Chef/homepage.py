@@ -1,4 +1,3 @@
-from turtle import title
 import typing
 from flask import Flask, Blueprint, render_template, request, url_for
 import requests
@@ -31,20 +30,42 @@ def homepage():
         data = response.json()
         try:
             # accessing the recipe dictionary
-            data = data[0]
+            # chnage to then repeat process for all three:
+            # recipe1 = data[0], recipe2 = data[1], recipe3 = data[2]
+            recipe1 = data[0]
+            recipe2 = data[1]
+            recipe3 = data[2]
 
-            title = data["title"]
+            # recipe 1
+            recipe1_title = recipe1["title"]
+            recipe1_img = recipe1["image"]
 
-            img = data["image"]
+            # recipe 2
+            recipe2_title = recipe2["title"]
+            recipe2_img = recipe2["image"]
 
-            for x in data:
-                for y in data["usedIngredients"]:
-                    print(y["original"])
+            # recipe 3
+            recipe3_title = recipe3["title"]
+            recipe3_img = recipe3["image"]
 
-            return render_template("home.html", data=data, title=title, img=img)
+            return (
+                render_template(
+                    "home.html",
+                    recipe1=recipe1,
+                    recipe1_title=recipe1_title,
+                    recipe1_img=recipe1_img,
+                    recipe2=recipe2,
+                    recipe2_title=recipe2_title,
+                    recipe2_img=recipe2_img,
+                    recipe3=recipe3,
+                    recipe3_title=recipe3_title,
+                    recipe3_img=recipe3_img,
+                ),
+                200,
+            )
         except:
             void = "No results"
-            return render_template("home.html", void=void)
+            return render_template("home.html", void=void), 400
 
 
 @home.route("/", methods=["POST"])
@@ -71,7 +92,7 @@ def random_recipe():
     data = response.json()
 
     try:
-        data = response.json()
+        # data = response.json()
         data1 = data["recipes"][0]
 
         title = data1["title"]
@@ -83,7 +104,7 @@ def random_recipe():
         instructions = data1["instructions"]
         return render_template(
             "home.html",
-            data1=data1,
+            data=data,
             title=title,
             img=img,
             servings=servings,
