@@ -28,6 +28,8 @@ print(green)
 print(yellow)
 print(red)
 
+print(*fruits)
+
 numbers = (16, 10, 86)
 (day, month, year) = numbers
 
@@ -35,6 +37,15 @@ print(day)
 print(month)
 print(year)
 
+print(*numbers)
+
+cities = (
+    "London",
+    "Manchester",
+    "Liverpool",
+    "Brighton",
+)
+print(*cities)
 
 # 5. Write a Python program to add an item in a tuple.
 new_tup = (100, False, "London", "fruits", 4.6)
