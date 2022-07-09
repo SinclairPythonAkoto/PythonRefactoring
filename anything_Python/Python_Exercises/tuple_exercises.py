@@ -1,3 +1,8 @@
+"""Tuple Exercises
+
+Source: https://www.w3resource.com/python-exercises/tuple/
+"""
+
 # 1. Write a Python program to create a tuple.
 isMale = True
 my_tuple = ("Sinclair", 16, isMale)
