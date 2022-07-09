@@ -4,18 +4,103 @@ Source: https://www.w3resource.com/python-exercises/list/
 """
 
 # 1. Write a Python program to sum all the items in a list.
+numbers = [1, 2, 4, 3, 5, 8, 7]
+total = 0
+for num in numbers:
+    total += num
+
+print(f"Total: {total}")
+
+
 # 2. Write a Python program to multiply all the items in a list.
+numbers = [1, 2, 4, 3, 5, 8, 7]
+multiplied_numbers = [num * 10 for num in numbers]
+
+print(multiplied_numbers)
+
+
 # 3. Write a Python program to get the largest number from a list.
+numbers = [1, 2, 4, 3, 5, 8, 6, 7]
+print(f"Max Number: {max(numbers)}")
+
+
 # 4. Write a Python program to get the smallest number from a list.
+numbers = [1, 2, 4, 3, 5, 8, 6, 7]
+print(f"Min Number: {min(numbers)}")
+
+
 # 5. Write a Python program to count the number of strings where the string length is 2 or
 # more and the first and last character are same from a given list of strings.
+names = ["Amanda", "Paul", "James", "Phlip", "John", "Bob"]
+
+new_list = [
+    (name, (name[0], name[-1]))
+    for name in names
+    if len(name) > 2
+    if name.lower()[0] == name.lower()[-1]
+]
+
+print(new_list)
+
+
 # 6. Write a Python program to get a list, sorted in increasing order by the last element in
 # each tuple from a given list of non-empty tuples.
+people = [("Sinclair", 35), ("John", 30), ("Mary", 80), ("sean", 14), ("Julie", 25)]
+print(f"Original list: {people}")
+new_list1 = []
+
+for person in people:
+    # take last item of each tuple
+    new_list1.append((person[1], person[0]))
+    # sort them from lowest to highest
+    new_list1.sort()
+
+# print back values in ascending order
+print(f"Reordered list from lowest to highest: {new_list1}")
+
+
 # 7. Write a Python program to remove duplicates from a list.
+list1 = [1, 2, 2, 2, 3, 3, 4, 5, 5, 6, 6, 7]
+remove_dupilcates = set(list1)
+remove_dupilcates = list(remove_dupilcates)
+
+print(remove_dupilcates)
+
+
 # 8. Write a Python program to check a list is empty or not.
+def is_empty(content):
+    if len(content) == 0:
+        return True
+    return False
+
+
+var = ""
+nums = [1, 2, 3, 4, 5]
+empty_list = []
+
+print(is_empty([]))
+print(is_empty(empty_list))
+print(is_empty(var))
+print(is_empty([1, 2, 3]))
+
+
 # 9. Write a Python program to clone or copy a list.
+list2 = [
+    2,
+    1020,
+    47,
+    873,
+    37,
+    9,
+]
+list3 = list2.copy()
+
+print(f"Copied list: {list3}")
+
+
 # 10. Write a Python program to find the list of words that are longer than n from a given
 # list of words.
+
 # 11. Write a Python function that takes two lists and returns True if they have at least one
 # common member.
 # 12. Write a Python program to print a specified list after removing the 0th, 4th and 5th elements.
