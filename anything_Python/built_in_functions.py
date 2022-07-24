@@ -97,6 +97,44 @@ print(f"Round: {round(3.51234, 3)}")
 print(f"Round: {round(3.51234, None)}")
 
 
+# zip() - combines 2+ individual lists/tuples/sets/dict into one list of tuples
+# you can use '*' to unpack lists/tuples/sets/dict - returns list of tuples.
+first_zip = zip({1, 2, 3}, {4, 5, 6})
+list_zip = list(first_zip)
+dict_zip = dict(first_zip)
+
+print(first_zip)    # zip object
+print(list_zip)     # [(1, 4), (2, 5), (3, 6)]
+print(dict_zip)
+
+nums1 = [1, 2, 3, 4, 5]
+nums2 = [6, 7, 8, 9, 10]
+z = zip(nums1, nums2)
+
+print(list(z))
+print(dict(z))
+print(tuple(z))
+
+nums1 = [1, 2, 3, 4, 5]
+nums2 = [6, 7, 8, 9, 10, 11, 12]
+z = dict(zip(nums1, nums2))
+
+print(z)    # {1: 6,...,5: 10} - cuts out value without pairs
+
+nums1 = [1, 2, 3, 4, 5]
+nums2 = [6, 7, 8, 9, 10, 11, 12]
+words = ["hi", "lol", "haha", ":)"]
+z = list(zip(words, nums1, nums2))
+
+print(z)    # [('hi', 1, 6), ('lol', 2, 7), ('haha', 3, 8), (':)', 4, 9)]
+
+# unpacking with zip() '*'
+five_by_two = [(0, 1), (1, 2), (2, 3), (3, 4), (4, 5)]
+unpack_zip = list(zip(*five_by_two))
+
+print(unpack_zip)   # [(0, 1, 2, 3, 4), (1, 2, 3, 4, 5)]
+
+
 """Exercises & Examples"""
 
 """
@@ -168,3 +206,126 @@ def extremes(element):
 print(extremes([1, 2, 3, 4, 5]))    # (1, 5)
 print(extremes((99, 25, 30, -7)))   # (-7, 99)
 print(extremes("alcatraz"))         # ('a', 'z')
+
+
+"""
+Write a function max_magnitude that accepts a single list full of numbers.  It should return the
+magnitude (the number that is furthest away from zero). 
+"""
+def max_magnitude(numbers):
+    return max((abs(num) for num in numbers))
+
+print(max_magnitude([300, 20, -900]))   # 900
+print(max_magnitude([10, 11, 12]))      # 12
+print(max_magnitude([-5, -1, -89]))     # 89
+
+
+"""
+Write a function called sum_even_values.  This should accept a variable number of arguments and 
+return the sum of all the arguments that are divisible by 2.  If there are no numbers divisible by
+2, the function should return 0.  
+"""
+def sum_even_values(*args):
+    return sum(num for num in args if num % 2 == 0)
+
+print(sum_even_values(1, 2, 3, 4, 5, 6))    # 12
+print(sum_even_values(4, 2, 1, 10))         # 16
+print(sum_even_values(1))                   # 0
+
+
+"""
+Write a function called sum_floats.  This function should accept a variable number of arguments.
+The function should return the sum of all the parameters that are floats.  If there are no floats 
+the function should return 0.
+"""
+def sum_floats(*args):
+    return sum(num for num in args if type(num) == float)
+    
+
+print(sum_floats(1.5, 2.4, 'awesome!', [], 1,))     # 3.9
+print(sum_floats(1, 2, 3, 4, 5))                    # 0
+
+
+"""
+A teacher has a list of students and their mid-term grades & final grades.  Use zip to find
+the highest grade of each student.  This should be returned in a dictionary:
+{'dan': 98, 'julie': 91, 'kate': 78}
+"""
+midterms = [80, 91, 78]
+finals = [98, 89, 53]
+students = ['dan', 'julie', 'kate']
+
+# map function
+final_grades = dict(
+    zip(
+        students,
+        map(
+            lambda pair: max(pair),
+            zip(midterms, finals)
+        )
+    )
+)
+print(final_grades)     # {'dan': 98, 'julie': 91, 'kate': 78}
+
+# dictionary comprehension
+final_grades_list_comp = {data[0]: max(data[1], data[2]) for data in zip(students, midterms, finals)}
+print(final_grades_list_comp)     # {'dan': 98, 'julie': 91, 'kate': 78}
+
+# finding the average grade
+average_grades = dict(
+    zip(
+        students,
+        map(
+            lambda pair: ((pair[0] + pair[1]) / 2),
+            zip(midterms, finals)
+        )
+    )
+)
+print(average_grades)
+
+
+"""
+Write a function called 'interleave' that accepts two strings.  It should return a new 
+string contaiing the 2x strings interwoven or zipped together.
+"""
+def interleave(word1, word2):
+    return "".join("".join(char) for char in list(zip(word1, word2)))
+
+print(interleave('hi', 'ha'))      # hhia
+print(interleave('aaa', 'zzz'))    # azazaz
+print(interleave('lzr', 'iad'))    # lizard
+
+
+"""
+Write a function called triple_and_filter.  This function should accept a list of numbers,
+filter out every number that is not divisible by 4, and return a new list where every
+remaining number is tripled.
+"""
+def triple_and_filter(nums):
+    return list((num * 3) for num in nums if num % 4 == 0)
+
+print(triple_and_filter([1, 2, 3, 4]))      # [12]
+print(triple_and_filter([6, 8, 10, 12]))    # [24, 36]
+
+# same as above using filter() & map()
+def interleave2(word1, word2):
+    return list(filter(lambda num: num % 4 == 0, map(lambda num: num*3, nums)))
+
+print(triple_and_filter([1, 2, 3, 4]))      # [12]
+print(triple_and_filter([6, 8, 10, 12]))    # [24, 36]
+
+
+"""
+Write a function called extract_full_name.  This function should accept a list of 
+dictionaries and return a new list of strings with the first name and last name 
+keys in each dictionary concatenated.
+"""
+def extract_full_name(data):
+    # return list(map(lambda name: name["first"] + " " + name["last"], data))
+    return list(map(lambda name: f"{name['first']} {name['last']}", data))  # same as above
+
+names = [
+    {"first": "Cynthia", "last": "Asante"},
+    {"first": "Sinclair", "last": "Akoto"}
+]
+print(extract_full_name(names))     # ['Cynthia Astante', 'Sinclair Akoto']
