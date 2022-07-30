@@ -7,22 +7,16 @@
 </head>
 
 <body>
-    <table style="width: 100%; text-align: center;">
-        <tr>
-            <th>Index</th>
-            <th>TV Show</th>
-            <th>IMDb Rating</th>
-        </tr>
-        {% for tv_show,IMDb_rating in tv_shows.items %}
-        {% if IMDb_rating == "8.5" %}
-        <tr>
-            <td>{{forloop.counter}}</td> <!-- this adds an index counter to the page */ -->
-            <td>{{tv_show}}</td>
-            <td>{{IMDb_rating}}</td>
-        </tr>
-        {% endif %}
-        {% endfor %}
-    </table>
+    <h1>
+        <center>Filters</center>
+    </h1>
+    <ul>
+        <li> <b>Lower filter: </b> {{value | lower}} <br> </li>
+        <li> <b>Length filter: </b> {{value | length}} <br> </li>
+        <li> <b>make_list filter: </b> {{value | make_list}} <br> </li>
+        <li> <b>Title filter: </b> {{value | title}} <br> </li>
+        <li> <b>Cut filter: </b> {{value | cut:" "}} <br> </li>
+    </ul>
 </body>
 
 </html>
