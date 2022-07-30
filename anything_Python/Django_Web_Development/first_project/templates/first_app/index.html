@@ -1,22 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+{% extends "first_app/base.html" %}
+{% load static %}
 
-<head>
-    <meta charset="UTF-8">
-    <title>My First Apllication</title>
-</head>
+{% block title %} My Pic {% endblock %}
 
-<body>
-    <h1>
-        <center>Filters</center>
-    </h1>
-    <ul>
-        <li> <b>Lower filter: </b> {{value | lower}} <br> </li>
-        <li> <b>Length filter: </b> {{value | length}} <br> </li>
-        <li> <b>make_list filter: </b> {{value | make_list}} <br> </li>
-        <li> <b>Title filter: </b> {{value | title}} <br> </li>
-        <li> <b>Cut filter: </b> {{value | cut:" "}} <br> </li>
-    </ul>
-</body>
+{% block content %}
 
-</html>
+<h1>Hi, this is a pic of Sinclair Akoto!</h1>
+<img src="{% static 'first_app/images/SinPic.jpg' %}" alt="Uh Oh,didn't show!">
+
+{% endblock %}

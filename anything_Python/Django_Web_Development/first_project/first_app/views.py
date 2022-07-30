@@ -14,18 +14,16 @@ def about(request):
     return render(request, "first_app/about.html")
 
 
-# def index(request):
-#     filters = {"value": "We are learning filters!"}
-#     return render(request, "first_app/index.html", context=filters)
+def educative(request):
+    return render(request, "first_app/educative.html")
+
+
+def index(request):
+    return render(request, "first_app/index.html")
 
 
 # def home(request):
 #     return HttpResponse("Welcome to the home page!")
-
-
-# def educative(request):
-#     return HttpResponse("Welcome to the Eductaive page!")
-
 
 # def show_age(request, age):
 #     return HttpResponse("I am %s years old" % age)
