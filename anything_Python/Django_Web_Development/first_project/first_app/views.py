@@ -3,12 +3,15 @@ from django.http import HttpResponse
 
 # Create your views here.
 def index(request):
-    favourite_book = {
-        "Raymond": "The Kite Runner",
-        "Emma": "The Thousand Splendid Suns",
-        "Denise": "The Greate Gatsby",
+    tv_shows_list = {
+        "tv_shows": {
+            "Game of Thrones": "9.3",
+            "Blacklist": "8",
+            "Suits": "8.5",
+            "The Witcher": "8.5",
+        }
     }
-    return render(request, "first_app/index.html", context=favourite_book)
+    return render(request, "first_app/index.html", context=tv_shows_list)
 
 
 def home(request):

@@ -7,8 +7,20 @@
 </head>
 
 <body>
-    <h1>Hello this is index.html!</h1>
-    {{ Raymond }}
+    <table>
+        <tr>
+            <th>Index</th>
+            <th>TV Show</th>
+            <th>IMDb Rating</th>
+        </tr>
+        {% for tv_show,IMDb_rating in tv_shows.items %}
+        <tr>
+            <td>{{forloop.counter}}</td> <!-- this adds an index counter to the page */ -->
+            <td>{{tv_show}}</td>
+            <td>{{IMDb_rating}}</td>
+        </tr>
+        {% endfor %}
+    </table>
 </body>
 
 </html>
