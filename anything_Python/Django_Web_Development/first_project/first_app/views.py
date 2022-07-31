@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
+from .forms import SearchForm
+
 
 def home(request):
     return render(request, "first_app/home.html")
@@ -22,6 +24,11 @@ def index(request):
     return render(request, "first_app/index.html")
 
 
+def forms(request):
+    form = SearchForm()
+    return render(request, "first_app/forms.html", {"form": form})
+
+
 # def home(request):
 #     return HttpResponse("Welcome to the home page!")
 
@@ -30,9 +37,9 @@ def index(request):
 # return HttpResponse(f"I am {age} years old") # f-string can also be used
 
 
-def even_or_odd(request, num):
-    if num % 2 == 0:
-        output = "%s is an even number." % num
-    else:
-        output = "%s is an odd number." % num
-    return HttpResponse(output)
+# def even_or_odd(request, num):
+#     if num % 2 == 0:
+#         output = "%s is an even number." % num
+#     else:
+#         output = "%s is an odd number." % num
+#     return HttpResponse(output)
