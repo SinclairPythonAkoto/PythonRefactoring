@@ -1,6 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
+# from django.contrib.auth.models import User
+
+
 from .forms import TestForm
 
 
@@ -25,8 +28,15 @@ def index(request):
 
 
 def forms(request):
-    form = TestForm()
-    return render(request, "first_app/forms.html", {"form": form})
+    form = TestForm(request.POST or None)
+    data = "None"
+    text = "None"
+    if form.is_valid():
+        data = form.cleaned_data
+        text = data.get("text")
+    return render(
+        request, "first_app/forms.html", {"form": form, "data": data, "text": text}
+    )
 
 
 # def home(request):
