@@ -27,7 +27,11 @@ def index(request):
 
 
 def forms(request):
-    form = TestForm(request.POST or None)
+    initial_dict = {
+        "text": "Some initail data",
+        "integer": 123,
+    }
+    form = TestForm(request.POST or None, initial=initial_dict)
     data = "None"
     text = "None"
     if form.is_valid():
