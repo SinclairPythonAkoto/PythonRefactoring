@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-from .forms import SearchForm
+from .forms import TestForm
 
 
 def home(request):
@@ -25,7 +25,7 @@ def index(request):
 
 
 def forms(request):
-    form = SearchForm()
+    form = TestForm()
     return render(request, "first_app/forms.html", {"form": form})
 
 
