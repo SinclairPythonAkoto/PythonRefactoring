@@ -1,13 +1,26 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.contrib.auth.models import User
+from django.db import IntegrityError
+from .forms import TestForm, PostModelForm
 
 
 from .forms import TestForm
 
 
-def home(request):
+def homepage(request):
     return render(request, "first_app/home.html")
+
+
+def home(request):
+    try:
+        user = User.objects.create_user(
+            username="Ulrich", email="ulrich@gmail.com", password="mac12"
+        )
+        user.save()
+    except IntegrityError as e:
+        print(e)
+    return HttpResponse("Welcome to the Home page!")
 
 
 def search(request):

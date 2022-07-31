@@ -1,8 +1,14 @@
 from django import forms
+from .models import Post
 
 
 # class SearchForm(forms.Form):
 #     q = forms.CharField()  # the variable name will get sent to the form page
+class PostModelForm(forms.ModelForm):
+    class Meta:
+        model = Post
+        fields = ["user", "title", "slug", "image", "content", "draft", "publish"]
+        exclude = []
 
 
 class TestForm(forms.Form):
