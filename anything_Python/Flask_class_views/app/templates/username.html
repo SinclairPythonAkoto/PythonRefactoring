@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Username</title>
+</head>
+
+<body>
+    <h1>User Page</h1>
+    <p>Enter your name below:</p><br>
+    <form action="{{ url_for('inputname') }}" method="post">
+        <input type="text" name="userName" id="userName" placeholder="Enter your name" required>
+        <button type="submit">Enter</button>
+    </form>
+    <br>
+    {% if user_name %}
+    <p>Hello {{ user_name }}!</p>
+    <br>
+    <a href="{{ url_for('homepage') }}">Retun Home</a>
+    {% endif %}
+</body>
+
+</html>

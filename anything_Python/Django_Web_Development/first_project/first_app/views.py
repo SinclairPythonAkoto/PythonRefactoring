@@ -15,7 +15,7 @@ def homepage(request):
 def home(request):
     try:
         user = User.objects.create_user(
-            username="Ulrich", email="ulrich@gmail.com", password="mac12"
+            username="Sinclair", email="sinclair@gmail.com", password="mac12"
         )
         user.save()
     except IntegrityError as e:
@@ -32,7 +32,10 @@ def about(request):
 
 
 def educative(request):
-    return render(request, "first_app/educative.html")
+    user = User.objects.get(username="Ulrich")
+    user.email = "hello@gmail.com"
+    user.save()
+    return HttpResponse("Welcome to Educative page!")
 
 
 def index(request):
